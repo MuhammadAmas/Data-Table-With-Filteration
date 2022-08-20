@@ -2,7 +2,7 @@ export const items =
 [
     {
         id: "0",
-        Desserts: 'Forzen Yougurt',
+        Desserts: 'Frozen Yougurt',
         Calories: 159,
         Fats: 6,
         Carbs: 20,

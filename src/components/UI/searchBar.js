@@ -1,13 +1,18 @@
-import React from "react";
+// import React, { Fragment } from "react";
+// import classes from './searchbar.module.css'
 
-const SearchBar = props => {
+// const SearchBar = props => {
+//     const getInputValue = (e)=>{
+//         console.log(props.listItems);
+//         console.log(e.target.value);
+//     };
 
-    return <React.Fragment>
-        <label>Search</label>
-        <input />
+//     return <Fragment>
+//         <div className={classes.SearchBar}>
+//             <input placeholder="Type to search Desserts in the list" type="text" onChange={getInputValue} />
+//         </div>
+//     </Fragment>
 
-    </React.Fragment>
+// }
 
-}
-
-export default SearchBar;
+// export default SearchBar;

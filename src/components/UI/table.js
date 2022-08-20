@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { items } from '../data/Items'
+import SearchBar from './searchBar';
 import classes from './table.module.css'
 
 
@@ -17,7 +18,7 @@ const Table = (props) => {
             for (let j = i + 1; j < (tempItems.length); j++) {
                 console.log(tempItems[minvalue][key])
                 console.log(tempItems[j][key])
-                
+
                 if (tempItems[j][key] < tempItems[minvalue][key]) {
                     minvalue = j;
                     temp = tempItems[i];
@@ -30,21 +31,26 @@ const Table = (props) => {
     }
 
 
-    // function sort(key) {
-    // console.log(key);
-    // const unsortedArr = items.map((item) => {
-    //     console.log(item);
-    //     let data = item[key];
-    //     return data;
-    // })
-    // console.log(unsortedArr);
+    const getInputValue = (e) => {
+        console.log(e.target.value.toLowerCase());
+            if (e.target.value == ''){
+                setListItems(listItems);
+            }else{
+                for(var i=0; i < listItems.length; i++){
+                    if(listItems[i].Desserts.toLowerCase() == e.target.value.toLowerCase()){
+                        console.log(listItems[i].Carbs);
+                        setListItems([listItems[i]])
+                    }
+                }
+            }
+    };
 
-    // let sortedArr = unsortedArr.sort(function (a, b) { return a - b });
-    // console.log('Sorted array', sortedArr);
 
-    // };
 
     return <Fragment>
+        <div className={classes.SearchBar}>
+            <input placeholder="Type to search Desserts in the list" type="text" onChange={getInputValue} />
+        </div>
         <div className={classes.table}>
             <table  >
 
